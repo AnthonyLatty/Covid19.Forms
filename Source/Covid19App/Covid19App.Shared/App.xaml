@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="Covid19App.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Application.Resources>
+        <!--  Main Colors  -->
+        <Color x:Key="NavigationPrimary">#3b4957</Color>
+        <Color x:Key="PrimaryColor">#2196F3</Color>
+        <Color x:Key="GrayColor">#3b4957</Color>
+        <Color x:Key="SecondaryColor">#BC4C1B</Color>
+        <Color x:Key="WhiteColor">#FFFFFF</Color>
+        <Color x:Key="BlackColor">#000000</Color>
+        <Color x:Key="ErrorColor">#B00020</Color>
+        <Color x:Key="WarningColor">#FFDE03</Color>
+        <Color x:Key="UnselectedTabColor">#9E9E9E</Color>
+
+        <!--  Font Awesome Icons  -->
+        <OnPlatform x:Key="FontAwesomeRegular" x:TypeArguments="x:String">
+            <On Platform="iOS" Value="FontAwesome5Free-Regular" />
+            <On Platform="Android" Value="fa-regular-400.ttf#Regular" />
+        </OnPlatform>
+        <OnPlatform x:Key="FontAwesomeSolid" x:TypeArguments="x:String">
+            <On Platform="iOS" Value="FontAwesome5Free-Solid" />
+            <On Platform="Android" Value="fa-solid-900.ttf#Solid" />
+        </OnPlatform>
+
+        <!--  Fonts  -->
+        <OnPlatform x:Key="BoldFont" x:TypeArguments="x:String">
+            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+            <On Platform="iOS" Value="Roboto-Regular" />
+        </OnPlatform>
+        <OnPlatform x:Key="NormalFont" x:TypeArguments="x:String">
+            <On Platform="Android" Value="Roboto-Light.ttf#Roboto-Light" />
+            <On Platform="iOS" Value="Roboto-Light" />
+        </OnPlatform>
+
+        <!--  Icons  -->
+        <x:String x:Key="IconHome">&#xf015;</x:String>
+        <x:String x:Key="IconStatistics">&#xf14e;</x:String>
+        <x:String x:Key="IconSettings">&#xf013;</x:String>
+        <x:String x:Key="IconMore">&#xf141;</x:String>
+        <x:String x:Key="IconCasesPortfolio">&#xf469;</x:String>
+
+        <!--  Thickness  -->
+        <Thickness x:Key="SafeArea">0, 35, 0, 0</Thickness>
+    </Application.Resources>
+</Application>

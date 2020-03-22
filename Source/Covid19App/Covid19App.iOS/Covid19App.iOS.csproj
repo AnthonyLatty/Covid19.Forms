@@ -125,11 +125,17 @@
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Covid19App\Covid19App.csproj">
-      <Project>{7AF06B8A-6279-45F0-809E-5C17CE7B84E6}</Project>
-      <Name>Covid19App</Name>
+    <ProjectReference Include="..\Covid19App.Shared\Covid19App.Shared.csproj">
+      <Project>{119AF5F2-F319-46AE-A5D7-A563AE5CB3E9}</Project>
+      <Name>Covid19App.Shared</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fa-regular-400.ttf" />
+    <BundleResource Include="Resources\fa-solid-900.ttf" />
+    <BundleResource Include="Resources\Roboto-Light.ttf" />
+    <BundleResource Include="Resources\Roboto-Regular.ttf" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
