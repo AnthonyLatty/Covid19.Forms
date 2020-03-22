@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Covid19App.Shared.ViewModels;
+using Xamarin.Forms;
 
 namespace Covid19App.Shared.Views
 {
@@ -7,6 +8,7 @@ namespace Covid19App.Shared.Views
         public CasesPage()
         {
             InitializeComponent();
+            BindingContext = new CasesPageViewModel(Navigation);
         }
     }
 }

@@ -4,6 +4,7 @@ using Android.Runtime;
 using Android.OS;
 using Xamarin.Forms.Platform.Android;
 using Covid19App.Shared;
+using Acr.UserDialogs;
 
 namespace Covid19App.Droid
 {
@@ -24,8 +25,8 @@ namespace Covid19App.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            XF.Material.Droid.Material.Init(this, savedInstanceState);
-
+            Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
+            UserDialogs.Init(this);
 
             LoadApplication(new App());
         }

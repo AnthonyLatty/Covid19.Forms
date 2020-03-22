@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
+using Covid19App.Shared.Services;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -11,12 +12,14 @@ namespace Covid19App.Shared.ViewModels
     {
         private string _title { get; set; }
         private bool _isNotConnected { get; set; }
+        public PermissionService _permissionService;
         public readonly HttpClient _httpClient;
         // Navigation property inherited in view models
         public INavigation Navigation { get; set; }
 
         public BaseViewModel()
         {
+            _permissionService = new PermissionService();
             _httpClient = new HttpClient();
 
             // Handle connectivity

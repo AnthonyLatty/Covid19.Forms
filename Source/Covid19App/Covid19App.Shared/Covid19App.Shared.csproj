@@ -13,7 +13,11 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.396" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.1" />
-    <PackageReference Include="XF.Material" Version="1.6.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="4.5.0.396" />
+    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.440" />
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
+    <PackageReference Include="Corcav.Behaviors" Version="2.3.7" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -22,5 +26,6 @@
     <Folder Include="Services\" />
     <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
 </Project>

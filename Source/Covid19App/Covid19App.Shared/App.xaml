@@ -10,13 +10,15 @@
         <!--  Main Colors  -->
         <Color x:Key="NavigationPrimary">#3b4957</Color>
         <Color x:Key="PrimaryColor">#2196F3</Color>
-        <Color x:Key="GrayColor">#3b4957</Color>
+        <Color x:Key="GrayColor">#eaeaea</Color>
         <Color x:Key="SecondaryColor">#BC4C1B</Color>
         <Color x:Key="WhiteColor">#FFFFFF</Color>
         <Color x:Key="BlackColor">#000000</Color>
         <Color x:Key="ErrorColor">#B00020</Color>
         <Color x:Key="WarningColor">#FFDE03</Color>
         <Color x:Key="UnselectedTabColor">#9E9E9E</Color>
+        <Color x:Key="RecoverColor">#ffa200</Color>
+        <Color x:Key="ConfirmedColor">#45b6b0</Color>
 
         <!--  Font Awesome Icons  -->
         <OnPlatform x:Key="FontAwesomeRegular" x:TypeArguments="x:String">
@@ -47,5 +49,13 @@
 
         <!--  Thickness  -->
         <Thickness x:Key="SafeArea">0, 35, 0, 0</Thickness>
+
+        <!--  Styles  -->
+        <Style x:Key="DefaultFrame" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="{StaticResource WhiteColor}" />
+            <Setter Property="BorderColor" Value="Transparent" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="HasShadow" Value="{OnPlatform Android=True, iOS=False}" />
+        </Style>
     </Application.Resources>
 </Application>

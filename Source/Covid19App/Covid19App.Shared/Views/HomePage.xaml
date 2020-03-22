@@ -4,13 +4,13 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:Covid19App.Shared.Controls"
-    BackgroundColor="{StaticResource GrayColor}">
+    BackgroundColor="{StaticResource GrayColor}"
+    Visual="Material">
     <Grid RowSpacing="0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="100" />
+            <RowDefinition Height="80" />
             <RowDefinition Height="40" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="95" />
         </Grid.RowDefinitions>
 
         <!--  Header section  -->
@@ -18,5 +18,71 @@
         <!--  Connection view  -->
         <controls:ConnectionView Grid.Row="1" />
 
+        <ScrollView Grid.Row="2">
+            <StackLayout Margin="10" Spacing="20">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="25"
+                    HorizontalOptions="Start"
+                    Text="COVID-19" />
+                <Frame Style="{StaticResource DefaultFrame}">
+                    <!--  About section  -->
+                    <StackLayout>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            Text="About" />
+                        <Label
+                            FontSize="Body"
+                            LineBreakMode="WordWrap"
+                            LineHeight="1.2"
+                            Text="Coronavirus disease (COVID-19) is an infectious disease caused by a new virus." />
+                        <Label
+                            FontSize="Body"
+                            LineBreakMode="WordWrap"
+                            LineHeight="1.2"
+                            Text="The disease causes respiratory illness (like the flu) with symptoms such as a cough, fever, and in more severe cases, difficulty breathing." />
+                    </StackLayout>
+                </Frame>
+                <Frame Style="{StaticResource DefaultFrame}">
+                    <!--  How it spread section  -->
+                    <StackLayout>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            Text="How it spreads" />
+                        <Label
+                            FontSize="Body"
+                            LineBreakMode="WordWrap"
+                            LineHeight="1.2"
+                            Text="Coronavirus disease spreads primarily through contact with an infected person when they cough or sneeze." />
+                        <Label
+                            FontSize="Body"
+                            LineBreakMode="WordWrap"
+                            LineHeight="1.2"
+                            Text="It also spreads when a person touches a surface or object that has the virus on it, then touches their eyes, nose, or mouth." />
+                    </StackLayout>
+                </Frame>
+                <Frame Margin="0,0,0,20" Style="{StaticResource DefaultFrame}">
+                    <!--  Symptoms section  -->
+                    <StackLayout>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            Text="Symptoms" />
+                        <Label
+                            FontSize="Body"
+                            LineBreakMode="WordWrap"
+                            LineHeight="1.2"
+                            Text="People may be sick with the virus for 1 to 14 days before developing symptoms. The most common symptoms of coronavirus disease (COVID-19) are fever, tiredness, and dry cough." />
+                        <Label
+                            FontSize="Body"
+                            LineBreakMode="WordWrap"
+                            LineHeight="1.2"
+                            Text="More rarely, the disease can be serious and even fatal. Older people, and people with other medical conditions (such as asthma, diabetes, or heart disease), may be more vulnerable to becoming severely ill." />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
     </Grid>
 </ContentPage>

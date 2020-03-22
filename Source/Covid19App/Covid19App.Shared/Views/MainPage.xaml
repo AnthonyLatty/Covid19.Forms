@@ -13,7 +13,8 @@
     NavigationPage.BackButtonTitle=""
     NavigationPage.HasNavigationBar="False"
     SelectedTabColor="{StaticResource SecondaryColor}"
-    UnselectedTabColor="{StaticResource UnselectedTabColor}">
+    UnselectedTabColor="{StaticResource UnselectedTabColor}"
+    Visual="Material">
 
     <!--  Tabs  -->
     <views:HomePage Title="Home">

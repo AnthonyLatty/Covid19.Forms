@@ -20,8 +20,9 @@ namespace Covid19App.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             Xamarin.Forms.Forms.Init();
-            XF.Material.iOS.Material.Init();
-
+            Xamarin.Forms.FormsMaterial.Init();
+            //Added to prevent iOS linker to strip behaviors assembly out of deployed package.
+            Corcav.Behaviors.Infrastructure.Init();
 
             LoadApplication(new App());
 
