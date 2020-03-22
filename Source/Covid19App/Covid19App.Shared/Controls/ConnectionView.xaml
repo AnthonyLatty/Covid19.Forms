@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="Covid19App.Shared.Controls.ConnectionView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:Covid19App.Shared.ViewModels"
+    BackgroundColor="{StaticResource WarningColor}"
+    IsVisible="{Binding IsNotConnected}">
+
+    <ContentView.BindingContext>
+        <viewModels:BaseViewModel />
+    </ContentView.BindingContext>
+
+    <StackLayout>
+        <Label
+            Margin="10"
+            HorizontalOptions="CenterAndExpand"
+            HorizontalTextAlignment="Center"
+            Text="No Internet Connection."
+            TextColor="Black" />
+    </StackLayout>
+</ContentView>

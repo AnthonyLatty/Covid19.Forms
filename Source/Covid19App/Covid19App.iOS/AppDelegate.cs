@@ -20,6 +20,9 @@ namespace Covid19App.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             Xamarin.Forms.Forms.Init();
+            XF.Material.iOS.Material.Init();
+
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
