@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿using Covid19App.Shared;
+using Foundation;
 using UIKit;
 
 namespace Covid19App.iOS

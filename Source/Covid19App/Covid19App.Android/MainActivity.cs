@@ -3,6 +3,7 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 using Xamarin.Forms.Platform.Android;
+using Covid19App.Shared;
 
 namespace Covid19App.Droid
 {

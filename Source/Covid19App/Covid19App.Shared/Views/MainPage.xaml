@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage
+    x:Class="Covid19App.Shared.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:views="clr-namespace:Covid19App.Shared.Views"
+    android:TabbedPage.IsSwipePagingEnabled="False"
+    android:TabbedPage.ToolbarPlacement="Bottom"
+    ios:Page.UseSafeArea="True"
+    BarBackgroundColor="{StaticResource WhiteColor}"
+    NavigationPage.BackButtonTitle=""
+    NavigationPage.HasNavigationBar="False"
+    SelectedTabColor="{StaticResource SecondaryColor}"
+    UnselectedTabColor="{StaticResource UnselectedTabColor}">
+
+    <!--  Tabs  -->
+    <views:HomePage Title="Home">
+        <views:HomePage.IconImageSource>
+            <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Glyph="{StaticResource IconHome}" />
+        </views:HomePage.IconImageSource>
+    </views:HomePage>
+
+    <views:StatisticsPage Title="Statistics">
+        <views:StatisticsPage.IconImageSource>
+            <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Glyph="{StaticResource IconStatistics}" />
+        </views:StatisticsPage.IconImageSource>
+    </views:StatisticsPage>
+
+    <views:CasesPage Title="Cases">
+        <views:CasesPage.IconImageSource>
+            <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Glyph="{StaticResource IconGlobe}" />
+        </views:CasesPage.IconImageSource>
+    </views:CasesPage>
+
+    <views:SettingsPage Title="Settings">
+        <views:SettingsPage.IconImageSource>
+            <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Glyph="{StaticResource IconSettings}" />
+        </views:SettingsPage.IconImageSource>
+    </views:SettingsPage>
+</TabbedPage>

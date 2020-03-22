@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application
-    x:Class="Covid19App.App"
+    x:Class="Covid19App.Shared.App"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -40,10 +40,10 @@
 
         <!--  Icons  -->
         <x:String x:Key="IconHome">&#xf015;</x:String>
-        <x:String x:Key="IconStatistics">&#xf14e;</x:String>
+        <x:String x:Key="IconStatistics">&#xf681;</x:String>
         <x:String x:Key="IconSettings">&#xf013;</x:String>
         <x:String x:Key="IconMore">&#xf141;</x:String>
-        <x:String x:Key="IconCasesPortfolio">&#xf469;</x:String>
+        <x:String x:Key="IconGlobe">&#xf57d;</x:String>
 
         <!--  Thickness  -->
         <Thickness x:Key="SafeArea">0, 35, 0, 0</Thickness>

@@ -1,6 +1,7 @@
-﻿using Xamarin.Forms;
+﻿using Covid19App.Shared.Views;
+using Xamarin.Forms;
 
-namespace Covid19App
+namespace Covid19App.Shared
 {
     public partial class App : Application
     {
