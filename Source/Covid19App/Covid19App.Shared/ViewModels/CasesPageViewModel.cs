@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Linq;
 using Acr.UserDialogs;
 using Covid19App.Shared.Helpers;
 using Covid19App.Shared.Models;
@@ -14,15 +14,30 @@ namespace Covid19App.Shared.ViewModels
 {
     public class CasesPageViewModel : BaseViewModel
     {
+        private string _searchBarText;
+
         public ObservableCollection<Location> CoronaVirusCasesCollection { get; set; }
         public Command AppearingCommand => new Command(ExecuteFetchCases);
-        
+        public Command SearchButtonPressedCommand => new Command(ExecuteSearchButtonPressedCommand);
+        public Command TextChangedCommand => new Command(ExecuteTextChangedCommand);
+
+
         public CasesPageViewModel(INavigation navigation)
         {
             Title = "Worldwide Cases";
             Navigation = navigation;
 
             CoronaVirusCasesCollection = new ObservableCollection<Location>();
+        }
+
+        public string SearchBarText
+        {
+            get => _searchBarText;
+            set
+            {
+                _searchBarText = value;
+                OnPropertyChanged();
+            }
         }
 
         private async void ExecuteFetchCases()
@@ -52,7 +67,6 @@ namespace Covid19App.Shared.ViewModels
         {
             using (UserDialogs.Instance.Loading("Fetching cases..."))
             {
-                // call service
                 var url = AppSettings.CoronaTrackerEndpoint;
 
                 var response = await _httpClient.GetAsync(url);
@@ -69,10 +83,53 @@ namespace Covid19App.Shared.ViewModels
                     {
                         CoronaVirusCasesCollection.Add(cases);
                     }
-
-                    Console.WriteLine(CoronaVirusCasesCollection);
                 }
             }
+        }
+
+        private void ExecuteSearchButtonPressedCommand()
+        {
+            GetCountryBySearch();
+        }
+
+        private async void GetCountryBySearch()
+        {
+            try
+            {
+                var keyboard = SearchBarText;
+
+                var url = AppSettings.CoronaTrackerEndpoint;
+
+                var response = await _httpClient.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = response.Content.ReadAsStringAsync().Result;
+
+                    var json = JsonConvert.DeserializeObject<CoronaVirusCases>(content);
+
+                    var casesFound = new ObservableCollection<Location>(json.Locations);
+
+                    var searchedCountry = casesFound.Where(c => c.Country.ToLower().Contains(SearchBarText.ToLower()));
+
+                    foreach (var country in searchedCountry)
+                    {
+                        CoronaVirusCasesCollection.Add(country);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+
+                await UserDialogs.Instance.AlertAsync("Something went wrong, please try again later.", "Error", "Ok");
+            }
+        }
+
+
+        private void ExecuteTextChangedCommand()
+        {
+            //...
         }
     }
 }

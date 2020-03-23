@@ -10,13 +10,14 @@
     <b:Interaction.Behaviors>
         <b:BehaviorCollection>
             <b:EventToCommand Command="{Binding AppearingCommand}" EventName="Appearing" />
+            <b:EventToCommand Command="{Binding SearchButtonPressedCommand}" EventName="SearchButtonPressed" />
+            <b:EventToCommand Command="{Binding TextChangedCommand}" EventName="TextChanged" />
         </b:BehaviorCollection>
     </b:Interaction.Behaviors>
     <Grid RowSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="80" />
             <RowDefinition Height="80" />
-            <RowDefinition Height="40" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -39,41 +40,91 @@
                 <SearchBar
                     HorizontalOptions="StartAndExpand"
                     Placeholder="Search Countries"
+                    Text="{Binding SearchBarText}"
                     TextColor="Black" />
             </Frame>
         </StackLayout>
 
-        <!--  Connection view  -->
-        <controls:ConnectionView Grid.Row="2" />
-
         <!--  Listview  -->
         <ListView
-            Grid.Row="3"
+            Grid.Row="2"
             CachingStrategy="RecycleElement"
+            Footer=""
             HasUnevenRows="True"
             ItemsSource="{Binding CoronaVirusCasesCollection}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame Style="{StaticResource EventOuterFrame}">
-                            <Frame.Content>
-                                <Frame Style="{StaticResource EventInnerFrame}">
-                                    <Frame.Content>
-                                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                                            <StackLayout Orientation="Vertical">
-                                                <Label Text="{Binding Country}" />
-                                            </StackLayout>
-                                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
-                                                <Image
-                                                    HeightRequest="30"
-                                                    HorizontalOptions="EndAndExpand"
-                                                    Source="arrow_right_gray"
-                                                    WidthRequest="20" />
-                                            </StackLayout>
-                                        </StackLayout>
-                                    </Frame.Content>
-                                </Frame>
-                            </Frame.Content>
+                        <Frame CornerRadius="0" Style="{StaticResource DefaultFrame}">
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <StackLayout Orientation="Vertical">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="18"
+                                        Text="{Binding Country}" />
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image
+                                            HorizontalOptions="Start"
+                                            Source="ic_edit"
+                                            WidthRequest="30" />
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="15"
+                                            Text="Confirmed Cases"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="20"
+                                            Text="{Binding Latest.Confirmed}"
+                                            TextColor="{StaticResource ConfirmedColor}"
+                                            VerticalTextAlignment="Center" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image
+                                            HorizontalOptions="Start"
+                                            Source="ic_recover"
+                                            WidthRequest="30" />
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="15"
+                                            Text="Total Recovered"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="20"
+                                            Text="{Binding Latest.Recovered}"
+                                            TextColor="{StaticResource RecoverColor}"
+                                            VerticalTextAlignment="Center" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image
+                                            HorizontalOptions="Start"
+                                            Source="ic_death_timer"
+                                            WidthRequest="30" />
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="15"
+                                            Text="Total Deaths"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="20"
+                                            Text="{Binding Latest.Deaths}"
+                                            TextColor="{StaticResource SecondaryColor}"
+                                            VerticalTextAlignment="Center" />
+                                    </StackLayout>
+                                    <!--<StackLayout Orientation="Horizontal">
+                                        <Label
+                                            FontSize="13"
+                                            Text="Last updated: "
+                                            VerticalOptions="CenterAndExpand" />
+                                        <Label
+                                            FontSize="13"
+                                            Text="{Binding LastUpdated, StringFormat='{0:h:mm tt}'}"
+                                            VerticalOptions="CenterAndExpand" />
+                                    </StackLayout>-->
+                                </StackLayout>
+                            </StackLayout>
                         </Frame>
                     </ViewCell>
                 </DataTemplate>
