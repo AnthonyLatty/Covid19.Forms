@@ -25,7 +25,7 @@
         <controls:ConnectionView Grid.Row="1" />
 
         <ScrollView Grid.Row="2">
-            <StackLayout Margin="10" Spacing="20">
+            <StackLayout Margin="10" Spacing="15">
                 <Label
                     FontAttributes="Bold"
                     FontSize="25"
@@ -93,6 +93,61 @@
                     HorizontalOptions="Start"
                     Text="Caribbean Statistics" />
                 <!--  Caribbean frame  -->
+                <Frame Style="{StaticResource DefaultFrame}">
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Horizontal">
+                            <Image
+                                HorizontalOptions="Start"
+                                Source="ic_edit"
+                                WidthRequest="30" />
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text="Confirmed Cases"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Text="{Binding ConfirmedCases}"
+                                TextColor="{StaticResource ConfirmedColor}"
+                                VerticalTextAlignment="Center" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image
+                                HorizontalOptions="Start"
+                                Source="ic_recover"
+                                WidthRequest="30" />
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text="Total Recovered"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Text="{Binding RecoveredCases}"
+                                TextColor="{StaticResource RecoverColor}"
+                                VerticalTextAlignment="Center" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image
+                                HorizontalOptions="Start"
+                                Source="ic_death_timer"
+                                WidthRequest="30" />
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text="Total Deaths"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Text="{Binding DeadCases}"
+                                TextColor="{StaticResource SecondaryColor}"
+                                VerticalTextAlignment="Center" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
                 <Label
                     FontAttributes="Italic"
                     FontSize="12"

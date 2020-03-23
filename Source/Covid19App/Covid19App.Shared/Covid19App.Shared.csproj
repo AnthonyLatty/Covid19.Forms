@@ -27,5 +27,6 @@
     <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Renderers\" />
   </ItemGroup>
 </Project>

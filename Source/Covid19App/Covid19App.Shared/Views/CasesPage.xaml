@@ -3,9 +3,18 @@
     x:Class="Covid19App.Shared.Views.CasesPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:controls="clr-namespace:Covid19App.Shared.Controls">
+    xmlns:b="clr-namespace:Corcav.Behaviors;assembly=Corcav.Behaviors"
+    xmlns:controls="clr-namespace:Covid19App.Shared.Controls"
+    BackgroundColor="{StaticResource GrayColor}"
+    Visual="Material">
+    <b:Interaction.Behaviors>
+        <b:BehaviorCollection>
+            <b:EventToCommand Command="{Binding AppearingCommand}" EventName="Appearing" />
+        </b:BehaviorCollection>
+    </b:Interaction.Behaviors>
     <Grid RowSpacing="0">
         <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
             <RowDefinition Height="80" />
             <RowDefinition Height="40" />
             <RowDefinition Height="*" />
@@ -13,7 +22,62 @@
 
         <!--  Header section  -->
         <controls:TitleBar Grid.Row="0" />
+
+        <!--  Search bar  -->
+        <StackLayout
+            Grid.Row="1"
+            BackgroundColor="{StaticResource SecondaryColor}"
+            HeightRequest="80"
+            Orientation="Vertical">
+            <Frame
+                Margin="10,0,10,0"
+                BackgroundColor="{StaticResource WhiteColor}"
+                CornerRadius="30"
+                HeightRequest="20"
+                HorizontalOptions="FillAndExpand"
+                IsClippedToBounds="True">
+                <SearchBar
+                    HorizontalOptions="StartAndExpand"
+                    Placeholder="Search Countries"
+                    TextColor="Black" />
+            </Frame>
+        </StackLayout>
+
         <!--  Connection view  -->
-        <controls:ConnectionView Grid.Row="1" />
+        <controls:ConnectionView Grid.Row="2" />
+
+        <!--  Listview  -->
+        <ListView
+            Grid.Row="3"
+            CachingStrategy="RecycleElement"
+            HasUnevenRows="True"
+            ItemsSource="{Binding CoronaVirusCasesCollection}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Style="{StaticResource EventOuterFrame}">
+                            <Frame.Content>
+                                <Frame Style="{StaticResource EventInnerFrame}">
+                                    <Frame.Content>
+                                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                            <StackLayout Orientation="Vertical">
+                                                <Label Text="{Binding Country}" />
+                                            </StackLayout>
+                                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                                                <Image
+                                                    HeightRequest="30"
+                                                    HorizontalOptions="EndAndExpand"
+                                                    Source="arrow_right_gray"
+                                                    WidthRequest="20" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame.Content>
+                                </Frame>
+                            </Frame.Content>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </ContentPage>

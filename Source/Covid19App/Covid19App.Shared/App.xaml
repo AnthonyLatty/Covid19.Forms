@@ -57,5 +57,16 @@
             <Setter Property="CornerRadius" Value="10" />
             <Setter Property="HasShadow" Value="{OnPlatform Android=True, iOS=False}" />
         </Style>
+        <Style x:Key="EventInnerFrame" TargetType="Frame">
+            <Setter Property="Padding" Value="15,15,15,15" />
+            <Setter Property="CornerRadius" Value="0" />
+            <Setter Property="BackgroundColor" Value="{StaticResource GrayColor}" />
+        </Style>
+        <Style x:Key="EventOuterFrame" TargetType="Frame">
+            <Setter Property="CornerRadius" Value="0" />
+            <Setter Property="BackgroundColor" Value="{StaticResource GrayColor}" />
+            <Setter Property="Padding" Value="0,0,0,0.3" />
+            <Setter Property="HasShadow" Value="False" />
+        </Style>
     </Application.Resources>
 </Application>

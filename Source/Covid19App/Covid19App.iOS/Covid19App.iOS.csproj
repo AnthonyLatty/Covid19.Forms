@@ -112,6 +112,7 @@
     <BundleResource Include="Resources\ic_death_timer.png" />
     <BundleResource Include="Resources\ic_edit.png" />
     <BundleResource Include="Resources\ic_recover.png" />
+    <BundleResource Include="Resources\arrow_right_gray.png" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon.png" />
