@@ -1,5 +1,5 @@
 # Covid19.Forms
-🦠 A simple and fast mobile app for tracking the global coronavirus (COVID-19, SARS-CoV-2) outbreak worldwide. The most awesome Covid19.Forms app built originall in about 5 hours. 
+🦠 A simple and fast mobile app for tracking the global coronavirus (COVID-19, SARS-CoV-2) outbreak worldwide. The most awesome Covid19.Forms app built originally in about 5 hours. 
 
 **Live global stats (provided by [fight-covid19/bagdes](https://github.com/fight-covid19/bagdes)) from this API:**
 
