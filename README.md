@@ -7,6 +7,11 @@
 ![Covid-19 Recovered](https://covid19-badges.herokuapp.com/recovered/latest)
 ![Covid-19 Deaths](https://covid19-badges.herokuapp.com/deaths/latest)
 
+**Data soure & stats (provided by [ExpDev07/coronavirus-tracker-api](https://github.com/ExpDev07/coronavirus-tracker-api)) from this API:**
+
+![Travis build](https://api.travis-ci.com/ExpDev07/coronavirus-tracker-api.svg?branch=master)
+[![License](https://img.shields.io/github/license/ExpDev07/coronavirus-tracker-api)](LICENSE.md)
+
 ## Build Status
 
 | Build Server | Type            | Platform | Status                                                                                                                                                                                 |
