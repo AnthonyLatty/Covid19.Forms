@@ -15,7 +15,7 @@ namespace Covid19App.Droid
 {
 	
 	
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "1.0.0.0")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "1.0.0.0")]
 	public partial class Resource
 	{
 		
@@ -13686,6 +13686,9 @@ namespace Covid19App.Droid
 			
 			// aapt resource value: 0x7F07008B
 			public const int tooltip_frame_light = 2131165323;
+			
+			// aapt resource value: 0x7F07008C
+			public const int wave_hands = 2131165324;
 			
 			static Drawable()
 			{

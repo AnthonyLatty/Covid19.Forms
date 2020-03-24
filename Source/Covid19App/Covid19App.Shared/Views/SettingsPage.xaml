@@ -2,6 +2,65 @@
 <ContentPage
     x:Class="Covid19App.Shared.Views.SettingsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <ContentPage.Content />
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Covid19App.Shared.Controls"
+    BackgroundColor="{StaticResource WhiteColor}"
+    Visual="Material">
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--  Header section  -->
+        <controls:TitleBar Grid.Row="0" />
+        <!--  Connection view  -->
+        <controls:ConnectionView Grid.Row="1" />
+
+        <Grid Grid.Row="2" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0">
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="25"
+                            Text="Hey!" />
+                        <Label Text="Thanks for using the app :)" />
+                        <Label Text="Remember to keep safe..." />
+                    </StackLayout>
+                    <Image
+                        Margin="0,0,40,0"
+                        Aspect="AspectFit"
+                        HeightRequest="70"
+                        HorizontalOptions="EndAndExpand"
+                        Source="wave_hands"
+                        WidthRequest="90" />
+                </StackLayout>
+            </StackLayout>
+
+            <Button
+                Grid.Row="1"
+                BackgroundColor="{StaticResource SecondaryColor}"
+                Command="{Binding GithubCommand}"
+                Text="GitHub" />
+            <Button
+                Grid.Row="2"
+                BackgroundColor="{StaticResource RecoverColor}"
+                Command="{Binding LinkedInCommand}"
+                Text="LinkedIn" />
+            <Button
+                Grid.Row="3"
+                BackgroundColor="{StaticResource ConfirmedColor}"
+                Command="{Binding TwitterCommand}"
+                Text="Twitter" />
+        </Grid>
+    </Grid>
 </ContentPage>

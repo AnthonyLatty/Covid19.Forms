@@ -10,5 +10,10 @@ namespace Covid19App.Shared.Views
             InitializeComponent();
             BindingContext = new CasesPageViewModel(Navigation);
         }
+
+        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            CoronaCasesListView.SelectedItem = null;
+        }
     }
 }
