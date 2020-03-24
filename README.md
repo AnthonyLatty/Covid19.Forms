@@ -16,7 +16,7 @@
 
 | Build Server | Type            | Platform | Status                                                                                                                                                                                 |
 |--------------|-----------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Azure AppCenter | App Build       | Android    |  |                                           
+| Azure AppCenter | App Build       | Android    | [![Build status](https://build.appcenter.ms/v0.1/apps/bb3231aa-a3eb-43b6-a9d5-dc8161efba37/branches/master/badge)](https://appcenter.ms) |                                           
 
 ### Made Possible By
 * [Acr.UserDialogs](https://github.com/aritchie/userdialogs)
