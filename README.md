@@ -12,6 +12,9 @@
 ![Travis build](https://api.travis-ci.com/ExpDev07/coronavirus-tracker-api.svg?branch=master)
 [![License](https://img.shields.io/github/license/ExpDev07/coronavirus-tracker-api)](LICENSE.md)
 
+## Artwork :smiley:
+<img src="Artwork/artwork_droid_1.jpg" Width="220" /> <img src="Artwork/artwork_droid_2.jpg" Width="220" />
+
 ## Build Status
 
 | Build Server | Type            | Platform | Status                                                                                                                                                                                 |
