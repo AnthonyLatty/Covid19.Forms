@@ -12,6 +12,15 @@
 ![Travis build](https://api.travis-ci.com/ExpDev07/coronavirus-tracker-api.svg?branch=master)
 [![License](https://img.shields.io/github/license/ExpDev07/coronavirus-tracker-api)](LICENSE.md)
 
+## Download
+
+Development build available:
+
+| Source | Platform |                                                       
+|--------------|-----------------|
+| App Center | [Android](https://install.appcenter.ms/orgs/younitilabs/apps/covid19.forms/distribution_groups/public%20testers) |
+
+
 ## Artwork :smiley:
 <img src="Artwork/artwork_droid_1.jpg" Width="220" /> <img src="Artwork/artwork_droid_2.jpg" Width="220" />
 
@@ -19,7 +28,7 @@
 
 | Build Server | Type            | Platform | Status                                                                                                                                                                                 |
 |--------------|-----------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Azure AppCenter | App Build       | Android    | [![Build status](https://build.appcenter.ms/v0.1/apps/bb3231aa-a3eb-43b6-a9d5-dc8161efba37/branches/master/badge)](https://appcenter.ms) |                                           
+| App Center | App Build       | Android    | [![Build status](https://build.appcenter.ms/v0.1/apps/bb3231aa-a3eb-43b6-a9d5-dc8161efba37/branches/master/badge)](https://appcenter.ms) |                                           
 
 ### Made Possible By
 * [Acr.UserDialogs](https://github.com/aritchie/userdialogs)
